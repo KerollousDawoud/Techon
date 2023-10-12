@@ -22,8 +22,8 @@ class CustomDotControllerOnBoarding extends StatelessWidget {
               (index) => AnimatedContainer(
                 margin: EdgeInsets.only(right: 5),
             duration: Duration(
-              milliseconds: 2000,
-            ),
+              milliseconds: 900,
+              ),
             width: controller.currentPage == index ? 20 : 7,
             height: 7,
             decoration: BoxDecoration(

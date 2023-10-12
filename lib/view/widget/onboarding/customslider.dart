@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:technoshopapp/controller/onboarding-controller.dart';
+
 import '../../../data/datasource/static/static.dart';
 
 class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
@@ -23,24 +24,24 @@ class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
             style: Theme.of(context).textTheme.headline1,
           ),
           SizedBox(
-            height: 80,
+            height: 60,
           ),
           Container(
             child: Image.asset(
               onBoardingList[i].image!,
-              height: 200,
-              width: 170,
+              height: 250,
+              width: 350,
               fit: BoxFit.fill,
             ),
           ),
-          SizedBox(height: 60),
+          SizedBox(height: 50),
           Container(
             width: double.infinity,
             alignment: Alignment.center,
             child: Text(
               onBoardingList[i].body!,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodyText1 ,
+              style: Theme.of(context).textTheme.bodyText1,
             ),
           ),
         ],
