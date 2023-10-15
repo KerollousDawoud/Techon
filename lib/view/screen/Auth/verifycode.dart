@@ -5,26 +5,24 @@ import 'package:get/get.dart';
 import 'package:technoshopapp/view/widget/Auth/custombuttonauth.dart';
 import 'package:technoshopapp/view/widget/Auth/customtextformauth.dart';
 import 'package:technoshopapp/view/widget/Auth/customtexttitleauth.dart';
-import 'package:technoshopapp/view/widget/Auth/logoauth.dart';
 
-import '../../../controller/auth/login_controller.dart';
+import '../../../controller/auth/verifycode_controller.dart';
 import '../../../core/constant/color.dart';
 import '../../widget/Auth/customtextbodyauth.dart';
-import '../../widget/Auth/textsignup.dart';
 
-class Login extends StatelessWidget {
-  const Login({super.key});
+class VerifyCode extends StatelessWidget {
+  const VerifyCode({super.key});
 
   @override
   Widget build(BuildContext context) {
-    LoginControllerImp controllerImp = Get.put(LoginControllerImp());
+    VerifyCodeControllerImp controllerImp = Get.put(VerifyCodeControllerImp());
     return Scaffold(
         backgroundColor: AppColor.backgroundColor,
         appBar: AppBar(
           backgroundColor: AppColor.backgroundColor,
           centerTitle: true,
           elevation: 0,
-          title: Text('Login',
+          title: Text('Verify Code',
               style: Theme.of(context)
                   .textTheme
                   .headline1!
@@ -35,7 +33,6 @@ class Login extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
             child: ListView(
               children: [
-                LogoAuth(),
                 CustomTextTitleAuth(text: 'Welcome Back'),
                 SizedBox(height: 15),
                 CustomTextBodyAuth(
@@ -44,37 +41,17 @@ class Login extends StatelessWidget {
                 SizedBox(height: 30),
                 CustomTextFormAuth(
                   hinttext: 'Enter Your Email',
-                  labeltext: 'email',
+                  labeltext: 'Email',
                   iconData: Icons.email_outlined,
-                  mycontroller: controllerImp.email,
+                  mycontroller: controllerImp.code,
                   // mycontroller: mycontroller
                 ),
-                CustomTextFormAuth(
-                  hinttext: 'Enter Your Password',
-                  labeltext: 'Password',
-                  iconData: Icons.remove_red_eye,
-                  mycontroller: controllerImp.password,
-                  // mycontroller: mycontroller
-                ),
-                InkWell(
-                  onTap: () {
-                    controllerImp.goToForgetPassword();
-                  },
-                  child: Text(
-                    'Forget Password',
-                    textAlign: TextAlign.end,
-                  ),
-                ),
-                CustomButtonAuth(text: 'Sign In', onPressed: () {}),
+                CustomButtonAuth(
+                    text: 'Continue',
+                    onPressed: () {
+                      controllerImp.goToResetPassword();
+                    }),
                 SizedBox(height: 40),
-                CustomTextSignUpOrSignIn(
-                  textone: " Don't have an account ? ",
-                  texttwo: ' SignUp',
-                  onTap: () {
-                    controllerImp.goToSignUp();
-                    ();
-                  },
-                )
               ],
             ),
           ),

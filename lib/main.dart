@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:technoshopapp/core/localization/changelocal.dart';
 import 'package:technoshopapp/core/localization/translation.dart';
 import 'package:technoshopapp/core/services/services.dart';
+import 'package:technoshopapp/view/screen/Auth/forgetpassword.dart';
 import 'package:technoshopapp/view/screen/language.dart';
 import 'package:technoshopapp/view/screen/onboarding.dart';
 
