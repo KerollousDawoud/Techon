@@ -3,27 +3,26 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:technoshopapp/view/widget/Auth/custombuttonauth.dart';
+import 'package:technoshopapp/view/widget/Auth/customtextbodyauth.dart';
 import 'package:technoshopapp/view/widget/Auth/customtextformauth.dart';
 import 'package:technoshopapp/view/widget/Auth/customtexttitleauth.dart';
 
-import '../../../controller/auth/resetpassword_controller.dart';
-import '../../../core/constant/color.dart';
-import '../../widget/Auth/customtextbodyauth.dart';
+import '../../../../core/constant/color.dart';
+import '../../../controller/auth/checkemail_controller.dart';
 
-class ResetPassword extends StatelessWidget {
-  const ResetPassword({super.key});
+class CheckEmail extends StatelessWidget {
+  const CheckEmail({super.key});
 
   @override
   Widget build(BuildContext context) {
-    ResetPasswordControllerImp controllerImp =
-        Get.put(ResetPasswordControllerImp());
+    CheckEmailControllerImp controllerImp = Get.put(CheckEmailControllerImp());
     return Scaffold(
         backgroundColor: AppColor.backgroundColor,
         appBar: AppBar(
           backgroundColor: AppColor.backgroundColor,
           centerTitle: true,
           elevation: 0,
-          title: Text('Reset Password',
+          title: Text('Forget Password',
               style: Theme.of(context)
                   .textTheme
                   .headline1!
@@ -34,30 +33,24 @@ class ResetPassword extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
             child: ListView(
               children: [
-                CustomTextTitleAuth(text: 'Welcome Back'),
-                SizedBox(height: 15),
+                SizedBox(height: 20),
+                CustomTextTitleAuth(text: 'Check Email'),
+                SizedBox(height: 10),
                 CustomTextBodyAuth(
                     text:
-                        'Sign In With Your Email And Password OR Continue With Social Media'),
-                SizedBox(height: 30),
+                        'Please Enter Your Email Address To Receive A Verification Code '),
+                SizedBox(height: 20),
                 CustomTextFormAuth(
-                  hinttext: 'Enter New Password',
-                  labeltext: 'Password',
-                  iconData: Icons.remove_red_eye,
-                  mycontroller: controllerImp.password,
-                  // mycontroller: mycontroller
-                ),
-                CustomTextFormAuth(
-                  hinttext: 'Confirm Password',
-                  labeltext: 'Password',
-                  iconData: Icons.remove_red_eye,
-                  mycontroller: controllerImp.password,
+                  hinttext: 'Enter Your Email',
+                  labeltext: 'Email',
+                  iconData: Icons.email_outlined,
+                  mycontroller: controllerImp.email,
                   // mycontroller: mycontroller
                 ),
                 CustomButtonAuth(
                     text: 'Check',
                     onPressed: () {
-                      controllerImp.goToLogin();
+                      controllerImp.goToSuccessSignUp();
                     }),
                 SizedBox(height: 40),
               ],

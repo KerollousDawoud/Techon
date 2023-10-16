@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: unnecessary_overrides
+
 import 'package:get/get.dart';
 import 'package:technoshopapp/core/constant/routes.dart';
 
@@ -9,7 +10,7 @@ abstract class VerifyCodeController extends GetxController {
 }
 
 class VerifyCodeControllerImp extends VerifyCodeController {
-  late TextEditingController code;
+  late String verifycode;
 
   @override
   checkcode() {}
@@ -21,13 +22,6 @@ class VerifyCodeControllerImp extends VerifyCodeController {
 
   @override
   void onInit() {
-    code = TextEditingController();
     super.onInit();
-  }
-
-  @override
-  void dispose() {
-    code.dispose();
-    super.dispose();
   }
 }

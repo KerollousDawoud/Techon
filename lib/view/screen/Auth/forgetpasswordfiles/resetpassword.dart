@@ -6,23 +6,24 @@ import 'package:technoshopapp/view/widget/Auth/custombuttonauth.dart';
 import 'package:technoshopapp/view/widget/Auth/customtextformauth.dart';
 import 'package:technoshopapp/view/widget/Auth/customtexttitleauth.dart';
 
-import '../../../controller/auth/verifycode_controller.dart';
-import '../../../core/constant/color.dart';
-import '../../widget/Auth/customtextbodyauth.dart';
+import '../../../../controller/auth/resetpassword_controller.dart';
+import '../../../../core/constant/color.dart';
+import '../../../widget/Auth/customtextbodyauth.dart';
 
-class VerifyCode extends StatelessWidget {
-  const VerifyCode({super.key});
+class ResetPassword extends StatelessWidget {
+  const ResetPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
-    VerifyCodeControllerImp controllerImp = Get.put(VerifyCodeControllerImp());
+    ResetPasswordControllerImp controllerImp =
+        Get.put(ResetPasswordControllerImp());
     return Scaffold(
         backgroundColor: AppColor.backgroundColor,
         appBar: AppBar(
           backgroundColor: AppColor.backgroundColor,
           centerTitle: true,
           elevation: 0,
-          title: Text('Verify Code',
+          title: Text('Reset Password',
               style: Theme.of(context)
                   .textTheme
                   .headline1!
@@ -40,16 +41,23 @@ class VerifyCode extends StatelessWidget {
                         'Sign In With Your Email And Password OR Continue With Social Media'),
                 SizedBox(height: 30),
                 CustomTextFormAuth(
-                  hinttext: 'Enter Your Email',
-                  labeltext: 'Email',
-                  iconData: Icons.email_outlined,
-                  mycontroller: controllerImp.code,
+                  hinttext: 'Enter New Password',
+                  labeltext: 'Password',
+                  iconData: Icons.remove_red_eye,
+                  mycontroller: controllerImp.password,
                   // mycontroller: mycontroller
                 ),
+                CustomTextFormAuth(
+                  hinttext: 'Confirm Password',
+                  labeltext: 'Password',
+                  iconData: Icons.remove_red_eye,
+                  mycontroller:
+                      controllerImp.password, // mycontroller: mycontroller
+                ),
                 CustomButtonAuth(
-                    text: 'Continue',
+                    text: 'Save',
                     onPressed: () {
-                      controllerImp.goToResetPassword();
+                      controllerImp.goToSuccessResetController();
                     }),
                 SizedBox(height: 40),
               ],

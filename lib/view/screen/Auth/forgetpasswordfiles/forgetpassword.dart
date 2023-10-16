@@ -7,8 +7,8 @@ import 'package:technoshopapp/view/widget/Auth/customtextbodyauth.dart';
 import 'package:technoshopapp/view/widget/Auth/customtextformauth.dart';
 import 'package:technoshopapp/view/widget/Auth/customtexttitleauth.dart';
 
-import '../../../controller/auth/forgetpassword_controller.dart';
-import '../../../core/constant/color.dart';
+import '../../../../controller/auth/forgetpassword_controller.dart';
+import '../../../../core/constant/color.dart';
 
 class ForgetPassword extends StatelessWidget {
   const ForgetPassword({super.key});
@@ -23,7 +23,7 @@ class ForgetPassword extends StatelessWidget {
           backgroundColor: AppColor.backgroundColor,
           centerTitle: true,
           elevation: 0,
-          title: Text('Check Email',
+          title: Text('Forget Password',
               style: Theme.of(context)
                   .textTheme
                   .headline1!
@@ -35,7 +35,7 @@ class ForgetPassword extends StatelessWidget {
             child: ListView(
               children: [
                 SizedBox(height: 20),
-                CustomTextTitleAuth(text: 'Check Password'),
+                CustomTextTitleAuth(text: 'Check Email'),
                 SizedBox(height: 10),
                 CustomTextBodyAuth(
                     text:
